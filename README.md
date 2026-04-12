@@ -1,6 +1,7 @@
 # Microsoft Full-Stack Developer — Coursework Repository
-This repo contains my coursework. 
-This is not the 
+This repo contains my coursework.
+My learing path of Csharp and dotnet tools. 
+
 
 ## 📌 About
 This repo showed:
