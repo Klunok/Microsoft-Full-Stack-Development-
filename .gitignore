@@ -55,3 +55,5 @@ nunit-*.xml
 
 # Other
 Microsoft-Full-Stack-Development-.sln
+
+.fake
