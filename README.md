@@ -56,9 +56,10 @@ Main objectives:
 
 This section contains final projects and integrated practice assignments completed for each course module.
 
-| Module | Project | Description | Technologies | Status |
-|--------|---------|-------------|--------------|--------|
+| Module | Project | Description | Technologies |
+|--------|---------|-------------|--------------|
 | 1 | [Student Grade Management System](01-Foundations_of_Coding_Full-Stack/6-Integrated_Coding_Practice_and_Project_Development) | Console application for managing students, assigning subject grades, calculating average grades, and displaying student records. | C#, .NET Console App | 
+| 2 | [C# Coding With Microsoft Copilot](02-Introduction_to_Programming_with_CSharp/5-Leveraging_MicrosoftCopilot_for_coding_and_debugging) | Console application for the library management system and displaying borrrowed and checked out books . | C#, .NET Console App, Copilot | 
 
 ## 🛠 Tech Stack
 
