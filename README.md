@@ -24,8 +24,8 @@ Main objectives:
 |--------|-------|--------|
 | 1 | [Foundations of Coding Full-Stack](https://www.coursera.org/learn/foundations-of-coding-full-stack?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/d5160241008f28099adaa42c1e282629) |
 | 2 | [Introduction to Programming With C#](https://www.coursera.org/learn/introduction-to-programming-with-c-sharp?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/7cfb90d9135b74e25744934a3ae61721) |
-| 3 | [Introduction to Web Development](https://www.coursera.org/learn/introduction-to-web-development?specialization=microsoft-full-stack-developer) | 🔄 In Progress |
-| 4 | [Blazor for Front-End Development](https://www.coursera.org/learn/blazor-for-front-end-development?specialization=microsoft-full-stack-developer) | ⏳ Planned |
+| 3 | [Introduction to Web Development](https://www.coursera.org/learn/introduction-to-web-development?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/7c6233d636003a11b74af9a78f34c361) |
+| 4 | [Blazor for Front-End Development](https://www.coursera.org/learn/blazor-for-front-end-development?specialization=microsoft-full-stack-developer) | 🔄 In Progress |
 | 5 | [Back-End Development with .NET](https://www.coursera.org/learn/back-end-development-with-dotnet/home/welcome) | ⏳ Planned |
 | 6 | [Database Integration and Management](https://www.coursera.org/learn/database-integration-and-management?specialization=microsoft-full-stack-developer) | ⏳ Planned |
 | 7 | [Full-Stack Integration](https://www.coursera.org/learn/full-stack-integration?specialization=microsoft-full-stack-developer) | ⏳ Planned |
@@ -60,6 +60,7 @@ This section contains final projects and integrated practice assignments complet
 |--------|---------|-------------|--------------|
 | 1 | [Student Grade Management System](01-Foundations_of_Coding_Full-Stack/6-Integrated_Coding_Practice_and_Project_Development) | Console application for managing students, assigning subject grades, calculating average grades, and displaying student records. | C#, .NET Console App | 
 | 2 | [C# Coding With Microsoft Copilot](02-Introduction_to_Programming_with_CSharp/5-Leveraging_MicrosoftCopilot_for_coding_and_debugging) | Console application for the library management system and displaying borrrowed and checked out books . | C#, .NET Console App, Copilot | 
+| 3 | [Writing HTML, CSS and JavaScript](03-Inroduction_to_Web_Development/5-Using_Copilot_for_Writing_HTML_CSS_and_JavaScript) | Website for fictional CV portofio | HTML, CSS, JavaScript, GitHub Pages | 
 
 ## 🛠 Tech Stack
 
