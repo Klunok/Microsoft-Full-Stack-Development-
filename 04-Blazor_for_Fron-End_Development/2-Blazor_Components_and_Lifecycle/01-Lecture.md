@@ -94,4 +94,54 @@ These communication methods enhance flexibility and modularity:
 Blazor's approach to component communication—using parameters for parent-to-child data flow and event callbacks for child-to-parent notifications—supports scalable, maintainable applications. These techniques allow developers to build modular, reusable components that respond to user interactions while keeping code organized and efficient
 
 
+# Lecture 04 Techniques for Creating Reusable Components
+
+## Introduction
+
+Reusable components in Blazor streamline development by allowing you to adapt components to different needs without rewriting code. This guide will show you how to use parameterization, templates, and inheritance to make components flexible and maintainable.
+
+## Instructions
+
+1. Set Up Component Parameterization
+- Add Parameters: Open the component’s .razor file and define parameters with the \[Parameter\] attribute. This attribute allows different values to be passed in and modifies the component’s behavior.
+- Usage: Adjust properties like labels, colors, or sizes through parameters, enabling easy reuse across the application.
+- Example: For a button component, add a label parameter to adapt the button for "Submit," "Cancel," or "Reset" simply by setting the label when you use it.
+
+2\. Apply Templates for Content Flexibility
+
+- Define a Template: In your component, add a RenderFragment parameter, enabling custom content (e.g., UI elements) to be passed in.
+- Customize Content: Specify template content in the parent component, allowing the same component structure to display different content as needed.
+- Example: In a list component, use a template to change how items appear, like showing product images in one view and prices in another, without altering the list structure.
+
+3\. Use Component Inheritance for Shared Logic
+
+- Create a Base Component: Develop a base component with shared functionality, such as form validation logic.
+- Extend the Component: Inherit from the base component to create specialized components with unique fields or features.
+- Example: Extend a base form component to create login and registration forms. Each specialized form can add specific fields while keeping the shared validation in the base component.
+
+## Conclusion
+
+Combining parameterization, templates, and inheritance allows you to create adaptable, reusable components that streamline Blazor development. These techniques reduce code duplication and make your applications more accessible to manage, extend, and customize.
+
+# Lecture 05 Building Reusable Components in Blazor
+
+## Introduction
+
+Building reusable components in Blazor enhances development by reducing redundancy, improving code consistency, and enabling modular design, which supports scalable and manageable applications.
+
+## Benefits of Reusable Components
+
+- Code Consistency: Reusable components allow updates to be applied universally, saving time and reducing the risk of errors across the application.
+- Reduced Redundancy and Errors: Centralizing component code minimizes repetitive tasks and decreases the chances of mistakes when modifications are needed.
+- Modular Development: Reusable components operate independently, making complex applications more accessible to maintain and scale. Changes made in a single component reflect across all instances, simplifying updates and enhancing flexibility.
+
+## Techniques for Creating Reusable Components
+
+- Component Parameterization: Use parameters to customize components by adding attributes in the .razor file. For instance, a button component can be reused for different actions by setting labels like "Submit" or "Cancel".
+- Content Templates: RenderFragment parameters allow custom content to be passed into components, adapting them for various display needs without changing the underlying structure.
+- Component Inheritance: Base components encapsulate shared functionality, while specialized components inherit and expand upon these features, such as creating login and registration forms with shared validation logic.
+
+## Conclusion
+
+In Blazor, reusable components foster efficient, flexible development by promoting code reuse, adaptability, and easier maintenance, all essential for managing complex applications.
 
