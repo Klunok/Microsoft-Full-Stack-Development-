@@ -210,3 +210,105 @@ In addition to URL-based navigation, Blazor allows developers to programmaticall
 ## Conclusion
 
 Blazor’s routing features—basic navigation, dynamic routing, and advanced techniques—provide the tools needed to create intuitive and scalable web applications. By mastering these methods, developers can ensure smooth, user-friendly experiences that rival desktop applications.
+
+
+ # Lecture 05 Managing State in Blazor Applications
+
+## Introduction
+
+State management is a cornerstone of Blazor development, ensuring data consistency and smooth user experiences. It allows applications to handle user inputs, retain session data, and effectively synchronize real-time updates.
+
+## Key Concepts in State Management
+
+State in Blazor represents the stored data that reflects the current status of an object or system. It changes dynamically based on inputs or events, such as user interactions or external data updates. Effective state management is critical to avoiding data inconsistency and ensuring reliability across the application.
+
+For example, consider an online shopping cart where items must persist across pages until checkout. Without state management, such functionality would break, leading to poor user experiences.
+
+## Techniques for Managing State
+
+Blazor provides several methods to manage state based on the needs of the application:
+
+### Local Component State
+
+This technique stores data within individual components. It's ideal for scenarios where the state is limited to a single component, such as form inputs or temporary UI interactions. However, this state is lost when the page is refreshed.
+
+### Cascading Values
+
+When multiple components share related data, cascading values allow a parent component to pass data seamlessly to its children. For example, a parent managing user themes can share this state with child components to maintain a consistent design.
+
+### Dependency Injection (DI)
+
+DI centralizes shared state, making it accessible to unrelated components. For instance, a user profile service can provide user details to any component that needs them, ensuring a unified approach to shared data management.
+
+### Application State Services
+
+This method manages global data that needs to persist across pages and sessions, such as user authentication. Combining it with local storage techniques ensures consistent state retention even when the browser refreshes.
+
+## Best Practices for Effective State Management
+
+To maintain a clean and efficient Blazor application, developers should consider these principles:
+
+- Match State Scope to Needs: Use local state for isolated data and global state for shared information. Avoid unnecessarily broad scopes to minimize complexity.
+- Separate State from UI Logic: Keeping state management logic separate makes the codebase more maintainable and components more reusable.
+- Ensure Consistency Across Interactions: Maintain shared data consistency to prevent synchronization issues, especially in multi-user scenarios.
+- Reset State When Necessary: Handle lifecycle events to clear state in reusable components, avoiding data conflicts during repeated interactions.
+
+## Conclusion
+
+Managing state effectively is crucial for building robust Blazor applications. Developers can ensure their applications are consistent, efficient, and user-friendly by understanding the challenges, leveraging the right techniques, and following best practices. Blazor’s flexibility in state management equips developers with the tools they need to handle diverse use cases.
+
+
+# Lecture 06 Implementing Form Validation
+
+## Introduction
+
+This guide explains implementing effective form validation in Blazor applications, ensuring data integrity and a smooth user experience.
+
+## Steps to Implement Form Validation
+
+1\. Set Up the Data Model
+
+- Define a class for user input data, e.g., `UserDetails`.
+- Include properties for each form field, such as `UserName` and `EmailAddress`.
+
+2\. Apply Data Annotations
+
+- Use attributes like `[Required]` for mandatory fields and `[EmailAddress]` for email validation.
+
+```csharp
+public class UserDetails {
+\[Required(ErrorMessage = "User Name is required")\]
+public string UserName { get; set; }
+\[EmailAddress(ErrorMessage = "Invalid Email Address")\]
+public string EmailAddress { get; set; }
+}
+```
+
+3\. Create the Blazor Form
+
+- Use `<EditForm>` to build the form and bind it to the data model:
+
+```html
+<EditForm Model="@userDetails" OnValidSubmit="HandleSubmit">
+</EditForm>
+```
+
+4\. Add Validation Components
+
+- Include `<DataAnnotationsValidator />` to enforce validation rules.
+- Use `<ValidationSummary />` to display error messages.
+
+```html
+<EditForm Model="@userDetails" OnValidSubmit="HandleSubmit">
+<DataAnnotationsValidator />
+<ValidationSummary />
+</EditForm>
+```
+
+5\. Handle Form Submission
+
+- Implement the `HandleSubmit` method to process the form data when validation passes.
+
+## Conclusion
+
+By applying these steps, you can ensure robust and user-friendly form validation in your Blazor applications. Always test thoroughly to enhance user experience and data reliability.
