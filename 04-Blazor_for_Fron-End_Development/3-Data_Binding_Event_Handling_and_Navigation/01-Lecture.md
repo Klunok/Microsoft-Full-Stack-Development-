@@ -180,3 +180,33 @@ receivedValue = value;
 ## Conclusion
 
 Using EventCallback and EventCallback<T> enhances communication between components, enabling scalable and responsive web applications. Focus on defining clear event flows for robust event handling.
+
+
+# Lecture 04 Navigating Blazor Applications: Routing and Navigation Techniques
+
+## Introduction
+
+Routing in Blazor is essential for creating dynamic single-page applications (SPAs) that deliver fast and seamless user experiences. It enables users to navigate between different components and pages efficiently.
+
+## Routing Basics
+
+Routing in Blazor maps URLs to components, allowing for efficient page transitions without full-page reloads. For instance, a URL like `/tasks` can display a task list, while `/tasks/add` loads a form. This is a crucial feature of SPAs, where only the necessary page parts are updated during navigation, keeping the app responsive.
+
+The `App.razor` file acts as the entry point for routing. When a user visits a URL, Blazor's router checks the route configuration to find a matching component and then loads it. If no route matches, a "Not Found" page is shown.
+
+## Advanced Routing Techniques
+
+Blazor also supports advanced routing mechanisms to enhance navigation:
+
+- Dynamic Routing: URLs can include variables, such as `/tasks/edit/{taskId}`, where `{taskId}` dynamically identifies a specific task. This flexibility makes routing more adaptable to user needs.
+- Route Constraints: These allow developers to validate URL parameters, ensuring only specific data types (e.g., integers) are passed. For example, defining a route as `/user/{userId:int}` ensures that only numeric values are accepted.
+- Route Templates: These templates create dynamic URLs that adapt based on user input, such as `/blog/{postId}` for displaying different blog posts. They make apps scalable and easier to maintain.
+- Nested Routing: Navigation becomes more organized by grouping related routes under a parent route, such as an admin dashboard containing user and settings sections. This hierarchical structure is particularly beneficial for complex applications.
+
+### Programmatic Navigation
+
+In addition to URL-based navigation, Blazor allows developers to programmatically direct users between views. For instance, the NavigationManager can redirect users to a task list without manual intervention after submitting a form. This streamlines workflows and reduces user effort.
+
+## Conclusion
+
+Blazor’s routing features—basic navigation, dynamic routing, and advanced techniques—provide the tools needed to create intuitive and scalable web applications. By mastering these methods, developers can ensure smooth, user-friendly experiences that rival desktop applications.
