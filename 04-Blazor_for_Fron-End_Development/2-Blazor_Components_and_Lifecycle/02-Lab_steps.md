@@ -55,6 +55,8 @@ You will add a child component and establish communication between parent and ch
 2. Include the ChildComponent in ReusableComponent.razor and use a @ref directive to interact with it.
 3. Test index.razor once more with the changes to reusable component.
 
+
+
 # Check again
 
 ## Step 1: Prepare for the Application
