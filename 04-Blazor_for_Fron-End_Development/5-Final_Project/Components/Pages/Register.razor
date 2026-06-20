@@ -1,0 +1,91 @@
+@page "/register/{id:int}"
+@inject EventService EventService
+@inject UserSessionTracker UserSession
+
+<PageTitle>Event Registration</PageTitle>
+
+@if (eventItem is null)
+{
+    <h1>Event not found</h1>
+    <p>You cannot register for an event that does not exist.</p>
+}
+else
+{
+    <h1>Register for @eventItem.Name</h1>
+    <p>@availablePlaces places remaining.</p>
+
+    @if (resultMessage is not null)
+    {
+        <div class="alert @resultClass" role="alert">@resultMessage</div>
+    }
+
+    @if (!isRegistered)
+    {
+        <EditForm Model="@form" OnValidSubmit="SubmitRegistration">
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <InputText id="name" class="form-control" @bind-Value="form.Name" />
+                <ValidationMessage For="@(() => form.Name)" class="text-danger" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <InputText id="email" class="form-control" type="email" @bind-Value="form.Email" />
+                <ValidationMessage For="@(() => form.Email)" class="text-danger" />
+            </div>
+
+            <button class="btn btn-primary" type="submit" disabled="@(availablePlaces == 0)">Submit Registration</button>
+        </EditForm>
+    }
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private EventItem? eventItem;
+    private RegistrationFormModel form = new();
+    private int availablePlaces;
+    private bool isRegistered;
+    private string? resultMessage;
+    private string resultClass = "alert-success";
+
+    protected override void OnParametersSet()
+    {
+        eventItem = EventService.GetById(Id);
+        availablePlaces = eventItem is null ? 0 : Math.Max(0, eventItem.Capacity - EventService.GetRegistrationCount(Id));
+        form = new RegistrationFormModel { Name = UserSession.Name ?? string.Empty, Email = UserSession.Email ?? string.Empty };
+        isRegistered = UserSession.RegisteredEventIds.Contains(Id);
+        resultMessage = null;
+    }
+
+    private void SubmitRegistration()
+    {
+        UserSession.UpdateProfile(form.Name, form.Email);
+        var result = EventService.Register(new EventRegistration
+        {
+            EventId = Id,
+            SessionId = UserSession.SessionId,
+            Name = form.Name,
+            Email = form.Email
+        });
+
+        (resultMessage, resultClass) = result switch
+        {
+            RegistrationResult.Success => ("Registration complete. Your place is confirmed.", "alert-success"),
+            RegistrationResult.EventFull => ("This event is now full.", "alert-warning"),
+            RegistrationResult.AlreadyRegistered => ("You are already registered for this event.", "alert-info"),
+            _ => ("The event is no longer available.", "alert-danger")
+        };
+
+        if (result == RegistrationResult.Success)
+        {
+            UserSession.MarkRegistered(Id);
+            isRegistered = true;
+            availablePlaces = Math.Max(0, availablePlaces - 1);
+        }
+    }
+}
