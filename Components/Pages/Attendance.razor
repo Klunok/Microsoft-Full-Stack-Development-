@@ -1,0 +1,38 @@
+@page "/attendance"
+@inject EventService EventService
+
+<PageTitle>Attendance Tracker</PageTitle>
+
+<h1>Attendance Tracker</h1>
+<p>Current registrations across all events.</p>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Registered</th>
+            <th>Capacity</th>
+            <th>Availability</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var summary in attendance)
+        {
+            var remaining = summary.Event.Capacity - summary.RegisteredCount;
+            <tr @key="summary.Event.Id">
+                <td>@summary.Event.Name</td>
+                <td>@summary.Event.Date.ToShortDateString()</td>
+                <td>@summary.RegisteredCount</td>
+                <td>@summary.Event.Capacity</td>
+                <td>@remaining remaining</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private IReadOnlyList<AttendanceSummary> attendance = [];
+
+    protected override void OnInitialized() => attendance = EventService.GetAttendance();
+}

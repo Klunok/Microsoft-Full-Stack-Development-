@@ -1,0 +1,20 @@
+@page "/events"
+@inject EventService EventService
+
+<PageTitle>Events</PageTitle>
+
+<h1>Events</h1>
+
+<Virtualize Items="@events" Context="eventItem">
+    <EventCard @key="eventItem.Id"
+               EventName="@eventItem.Name"
+               EventDate="@eventItem.Date"
+               Location="@eventItem.Location"
+               DetailsUrl="@($"/events/{eventItem.Id}")" />
+</Virtualize>
+
+@code {
+    private List<EventItem> events = [];
+
+    protected override void OnInitialized() => events = EventService.GetAll().ToList();
+}

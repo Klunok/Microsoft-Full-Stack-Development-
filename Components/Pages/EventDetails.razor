@@ -1,0 +1,45 @@
+@page "/events/{id:int}"
+@inject EventService EventService
+
+<PageTitle>Event Details</PageTitle>
+
+@if (eventItem is null)
+{
+    <h1>Event not found</h1>
+    <p>The event you requested does not exist.</p>
+}
+else
+{
+    <h1>@eventItem.Name</h1>
+
+    <dl class="row">
+        <dt class="col-sm-3">Date</dt>
+        <dd class="col-sm-9">@eventItem.Date.ToLongDateString()</dd>
+        <dt class="col-sm-3">Location</dt>
+        <dd class="col-sm-9">@eventItem.Location</dd>
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">@eventItem.Description</dd>
+        <dt class="col-sm-3">Attendance</dt>
+        <dd class="col-sm-9">@registeredCount of @eventItem.Capacity registered</dd>
+    </dl>
+
+    <NavLink class="btn btn-success" href="@($"/register/{Id}")">Register</NavLink>
+}
+
+<NavLink class="btn btn-secondary ms-2" href="/events">
+    Back to Events
+</NavLink>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private EventItem? eventItem;
+    private int registeredCount;
+
+    protected override void OnParametersSet()
+    {
+        eventItem = EventService.GetById(Id);
+        registeredCount = eventItem is null ? 0 : EventService.GetRegistrationCount(Id);
+    }
+}

@@ -1,0 +1,29 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">@EventName</h5>
+        <p class="card-text">
+            <strong>Date:</strong> @EventDate.ToShortDateString()
+        </p>
+        <p class="card-text">
+            <strong>Location:</strong> @Location
+        </p>
+
+        <NavLink class="btn btn-primary" href="@DetailsUrl">
+            View Details
+        </NavLink>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string EventName { get; set; } = "";
+
+    [Parameter]
+    public DateTime EventDate { get; set; }
+
+    [Parameter]
+    public string Location { get; set; } = "";
+
+    [Parameter]
+    public string DetailsUrl { get; set; } = "";
+}

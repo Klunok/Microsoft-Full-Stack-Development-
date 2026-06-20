@@ -1,0 +1,43 @@
+@page "/session"
+@inject EventService EventService
+@inject UserSessionTracker UserSession
+
+<PageTitle>My Session</PageTitle>
+
+<h1>My Session</h1>
+
+@if (!UserSession.HasProfile)
+{
+    <p>No registration has been completed in this session.</p>
+}
+else
+{
+    <p><strong>Name:</strong> @UserSession.Name</p>
+    <p><strong>Email:</strong> @UserSession.Email</p>
+
+    <h2>My registrations</h2>
+    @if (registeredEvents.Count == 0)
+    {
+        <p>No events registered yet.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var eventItem in registeredEvents)
+            {
+                <li @key="eventItem.Id">@eventItem.Name — @eventItem.Date.ToLongDateString()</li>
+            }
+        </ul>
+    }
+}
+
+@code {
+    private List<EventItem> registeredEvents = [];
+
+    protected override void OnParametersSet()
+    {
+        registeredEvents = EventService.GetAll()
+            .Where(eventItem => UserSession.RegisteredEventIds.Contains(eventItem.Id))
+            .ToList();
+    }
+}
