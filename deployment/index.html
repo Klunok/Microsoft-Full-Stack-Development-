@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Microsoft Full-Stack Development projects</title>
+    <style>
+        :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+        body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f7fb; color: #172033; }
+        main { width: min(700px, calc(100% - 3rem)); }
+        h1 { margin-bottom: .5rem; }
+        p { line-height: 1.5; }
+        .projects { display: grid; gap: 1rem; margin-top: 2rem; }
+        a { display: block; padding: 1.25rem; border-radius: .75rem; background: white; color: #172033; text-decoration: none; box-shadow: 0 6px 20px #17203318; }
+        a:hover, a:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+        strong, span { display: block; }
+        span { margin-top: .4rem; color: #4b5563; }
+        @media (prefers-color-scheme: dark) { body { background: #111827; color: #f9fafb; } a { background: #1f2937; color: #f9fafb; } span { color: #d1d5db; } }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Project deployments</h1>
+        <p>Choose a project to open.</p>
+        <div class="projects">
+            <a href="portfolio/">
+                <strong>HTML, CSS and JavaScript portfolio</strong>
+                <span>Static personal portfolio project</span>
+            </a>
+            <a href="eventease/">
+                <strong>EventEase</strong>
+                <span>Blazor WebAssembly event-management application</span>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
