@@ -22,10 +22,10 @@ Main objectives:
 
 | Number | Module | Status and Certificate |
 |--------|-------|--------|
-| 1 | [Foundations of Coding Full-Stack](https://www.coursera.org/learn/foundations-of-coding-full-stack?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/d5160241008f28099adaa42c1e282629) |
-| 2 | [Introduction to Programming With C#](https://www.coursera.org/learn/introduction-to-programming-with-c-sharp?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/7cfb90d9135b74e25744934a3ae61721) |
-| 3 | [Introduction to Web Development](https://www.coursera.org/learn/introduction-to-web-development?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/7c6233d636003a11b74af9a78f34c361) |
-| 4 | [Blazor for Front-End Development](https://www.coursera.org/learn/blazor-for-front-end-development?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/3e6413eaf14b4e6cfd1530290436d51c) |
+| 1 | [Foundations of Coding Full-Stack ](https://www.coursera.org/learn/foundations-of-coding-full-stack?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/d5160241008f28099adaa42c1e282629) |
+| 2 | [Introduction to Programming With C# ](https://www.coursera.org/learn/introduction-to-programming-with-c-sharp?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/7cfb90d9135b74e25744934a3ae61721) |
+| 3 | [Introduction to Web Development ](https://www.coursera.org/learn/introduction-to-web-development?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/7c6233d636003a11b74af9a78f34c361) |
+| 4 | [Blazor for Front-End Development ](https://www.coursera.org/learn/blazor-for-front-end-development?specialization=microsoft-full-stack-developer) | ✅ [Completed](https://coursera.org/share/3e6413eaf14b4e6cfd1530290436d51c) |
 | 5 | [Back-End Development with .NET](https://www.coursera.org/learn/back-end-development-with-dotnet/home/welcome) | 🔄 In Progress |
 | 6 | [Database Integration and Management](https://www.coursera.org/learn/database-integration-and-management?specialization=microsoft-full-stack-developer) | ⏳ Planned |
 | 7 | [Full-Stack Integration](https://www.coursera.org/learn/full-stack-integration?specialization=microsoft-full-stack-developer) | ⏳ Planned |
